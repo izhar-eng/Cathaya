@@ -20,5 +20,6 @@
     "establishment configuration",
     "patient create/read/restart",
     "backup and restore"
-  ]
+  ],
+  "status": "paid_blueprint_withdrawn_free_local_compose_prepared"
 }

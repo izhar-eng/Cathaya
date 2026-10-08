@@ -1,3 +1,10 @@
+# Phase actuelle : gratuit uniquement
+
+Le propriétaire a demandé un démarrage exclusivement gratuit. Le Blueprint payant
+render.yaml est retiré. Ne pas appliquer l’ancienne configuration ni son lien
+de création. Les éléments ci-dessous décrivent une option différée, non autorisée
+pour la phase actuelle. Voir docs/DEMARRAGE_GRATUIT.md.
+
 # Déploiement Render — Carthaya Health
 
 État au 9 octobre 2026 : workspace dédié créé et accessible. Aucun service
@@ -97,27 +104,7 @@ Source : https://render.com/pricing. Coût sur trois mois à configuration const
 387 USD. Ce montant couvre uniquement OpenMRS, et reste distinct du développement.
 Ne pas remplacer le budget de toute la pile par ce sous-total.
 
-## Appliquer le Blueprint
+## Déploiement payant différé
 
-1. Dans Render, sélectionner le workspace Carthaya Health.
-2. Ouvrir https://dashboard.render.com/blueprint/new?repo=https://github.com/izhar-eng/Cathaya
-3. Relier le dépôt et choisir la branche main si Render le demande.
-4. Vérifier les quatre services, Frankfurt et le coût annoncé.
-5. Renseigner OMRS_CONFIG_ADMIN_USER_PASSWORD avec un mot de passe unique fort,
-   conservé dans le gestionnaire de mots de passe ; ne pas l’envoyer dans le chat.
-6. Cliquer Apply. Les mots de passe de base sont générés et reliés automatiquement.
-7. Vérifier les builds et les démarrages avec les logs de chaque service.
-
-Le plugin ne crée pas directement les services privés avec leurs disques ;
-la première application de cette infrastructure passe par le Dashboard Blueprint.
-Les déploiements automatiques des Dockerfiles sont désactivés pour maîtriser
-les mises à jour de ce premier environnement ; les redéploiements sont manuels.
-
-Le health check /healthz prouve uniquement que la passerelle répond. Il ne prouve
-pas que la base ou OpenMRS est prêt. La connexion doit être testée sur /openmrs/spa/.
-Après démarrage sans démo, configurer les lieux, identifiants et rôles de Carthaya
-avant la création du premier patient. Aucun parcours clinique n’est encore validé.
-
-Docker et le CLI Render n’étant pas disponibles dans l’environnement de préparation,
-la validation locale couvre le schéma public, les références et la syntaxe shell.
-Les builds, le test nginx et la compatibilité en exécution seront vérifiés sur Render.
+Aucune instruction d’application active : le Blueprint payant a été retiré.
+Les images et scripts sont réutilisés par compose.yaml pour une installation locale.

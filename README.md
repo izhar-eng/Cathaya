@@ -26,14 +26,15 @@ Une installation sans données de démonstration doit fonctionner.
 
 1. Consulter `docs/STATUS.md`, `docs/TASKS.csv` et `docs/ROADMAP.md`.
 2. Suivre les fichiers et commits sur `https://github.com/izhar-eng/Cathaya`.
-3. Consulter `docs/RENDER.md` pour la préparation du déploiement dans le workspace dédié.
-4. Choisir la région Render et les ressources ; le diagnostic `scripts/preflight.py` concerne uniquement un serveur Linux autogéré.
+3. Consulter `docs/DEMARRAGE_GRATUIT.md` pour le démarrage sans frais cloud.
+4. Préparer une machine de développement avec Docker Compose et les mots de passe hors Git.
 5. Vérifier les versions et compatibilités dans `config/components.json`.
 6. Écrire le déploiement après ces vérifications, puis installer le premier parcours.
 
-Le fichier `render.yaml` prépare le premier bloc OpenMRS sur Render.
-Les images sont figées ; la construction et les parcours applicatifs restent à vérifier.
-Voir `docs/RENDER.md` pour le coût et les instructions d’application.
+La phase actuelle est exclusivement gratuite. `compose.yaml` prépare le premier
+bloc OpenMRS sur une machine locale, avec volumes persistants. Le Blueprint
+Render payant est retiré. Les images sont figées ; les builds et les parcours
+restent à vérifier. Voir `docs/DEMARRAGE_GRATUIT.md`.
 
 ## Suivi
 

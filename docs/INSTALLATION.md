@@ -3,7 +3,8 @@
 ## Hébergement retenu
 
 Render, workspace dédié Carthaya Health, accès vérifié le 9 octobre 2026.
-Voir docs/RENDER.md pour les services et leurs disques. Les informations Linux
+La phase actuelle est gratuite : voir docs/DEMARRAGE_GRATUIT.md et compose.yaml.
+Le Blueprint payant Render est retiré ; aucun service cloud n’est à provisionner. Les informations Linux
 ci-dessous concernent une éventuelle installation autogérée, et non le PaaS Render.
 
 ## Informations à renseigner

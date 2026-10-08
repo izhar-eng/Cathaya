@@ -1,9 +1,9 @@
 id,jalon,tache,statut,critere,preuve
 T01,J1,Préparer structure et suivi,fait,Fichiers présents et lisibles,Archive de démarrage
 T02,J1,Publier le socle dans Cathaya,fait,Commit et fichiers accessibles sur main,https://github.com/izhar-eng/Cathaya/tree/main
-T03,J1,Préparer hébergement Render dédié,en cours,Workspace dédié et configuration des services persistants,"Workspace dédié vérifié ; render.yaml préparé, application attendue"
+T03,J1,Préparer environnement gratuit,en cours,Workspace dédié et configuration des services persistants,Workspace Render dédié vide ; Compose local préparé
 T04,J1,Vérifier versions et compatibilités,en cours,Matrice documentée et images figées,Images figées ; propriétés OCI inspectées ; compatibilité en exécution à vérifier
-T05,J1,Préparer installation reproductible,en cours,Reconstruction sur environnement vierge,Schéma JSON officiel et références du Blueprint validés ; build non exécuté
+T05,J1,Préparer installation reproductible,en cours,Reconstruction sur environnement vierge,Compose local préparé ; validation runtime à réaliser sur la machine de développement
 T06,J1,Créer premier patient,à faire,Saisie et relecture après redémarrage,
 T07,J2,Relier parcours ambulatoire et Odoo,à faire,Prescription délivrance stock facture liés,
 T08,J3,Intégrer laboratoire et imagerie,à faire,Résultats reliés au dossier,

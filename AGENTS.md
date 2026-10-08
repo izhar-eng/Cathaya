@@ -10,3 +10,4 @@
 - Documenter installation, persistance et restauration avec des preuves.
 - Mettre à jour statut, décisions et tâches après chaque session.
 - Ne pas annoncer une fonction validée sans vérifier saisie, stockage et relecture.
+- Phase actuelle : uniquement des ressources gratuites. Aucun provisionnement payant Render.

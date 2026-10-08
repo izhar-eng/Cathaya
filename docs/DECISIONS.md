@@ -19,3 +19,9 @@
 
 
 Le tag amont 3.7.x-no-demo a été écarté : ses propriétés annoncent 3.8.0-SNAPSHOT et Platform 2.8.10-SNAPSHOT. La variante Carthaya repose sur les artefacts stables 3.7.1 / 2.8.8, épinglés par digest.
+
+Décision du 9 octobre 2026 : démarrage exclusivement gratuit, instruction du propriétaire.
+
+Le Blueprint Render payant est retiré du dépôt actif. Il reste dans l’historique Git.
+La configuration locale à volumes persistants est proposée pour tester réellement OpenMRS
+sans frais cloud. Le workspace dédié Render ne reçoit aucun service payant.

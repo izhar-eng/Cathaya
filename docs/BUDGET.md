@@ -51,3 +51,10 @@ est une composante des moyens techniques ; il ne couvre pas OpenELIS, Odoo,
 Orthanc/OHIF, FHIR, les outils IA ou les sauvegardes externes. Il ne modifie pas
 le TJM de développement de 300 EUR HT et n’est pas additionné une seconde fois
 au budget technique global. Pas de conversion EUR non vérifiée dans cette note.
+
+## Décision : démarrage gratuit
+
+Pour la phase initiale, aucun service cloud payant ne doit être provisionné.
+Le sous-total Render de 129 USD/mois est une option différée, pas une dépense
+engagée. Une pile locale utilisant la machine existante évite les frais cloud.
+Cette décision ne modifie pas le TJM ni les estimations de charge du développement.
