@@ -1,7 +1,8 @@
 # Déploiement Render — Carthaya Health
 
 État au 9 octobre 2026 : workspace dédié créé et accessible. Aucun service
-ni base PostgreSQL n’a été trouvé dans cet espace. Aucun Blueprint n’est appliqué.
+ni base PostgreSQL n’a été trouvé dans cet espace. render.yaml est préparé et
+validé contre le schéma JSON officiel. Aucun Blueprint n’est appliqué.
 
 ## Premier bloc : identité patient OpenMRS
 
@@ -23,12 +24,16 @@ de comptes administrateurs de démonstration. Aucun secret ne sera stocké dans 
 
 ## Versions et absence de données en dur
 
-La version stable 3.7.1 existe dans le dépôt officiel et dans le registre du
-backend ; elle est une candidate, non une installation validée.
-Le dépôt fournit distro-no-demo.properties, qui exclut referencedemodata et
-referenceapplication-demo. Une variante 3.7.x-no-demo existe dans le registre,
-mais son contenu et sa correspondance avec l’interface doivent être vérifiés
-avant sélection. Tous les artefacts retenus seront figés par digest.
+Les images backend et frontend 3.7.1 sont figées par digest. Le contenu OCI du
+backend annonce Platform 2.8.8, referenceapplication 1.4.0 et demo 1.9.2.
+Le Dockerfile Carthaya retire les répertoires referenceapplication-demo, le module
+referencedemodata 2.6.1 et leurs déclarations, avant le premier démarrage.
+Les fichiers de configuration de base restent présents. Ce filtrage est limité
+à la distribution inspectée ; des assertions arrêtent le build en cas d’écart.
+
+Le tag 3.7.x-no-demo a été écarté après inspection : il contient des snapshots
+3.8.0 / Platform 2.8.10. Le verrou des images est config/render-images.lock.json.
+Les contrôles et leurs limites sont consignés dans config/render-verification.json.
 
 La configuration métier requise (concepts, lieux, rôles, identifiants) reste
 nécessaire même sans patients de démonstration. Elle sera configurable et
@@ -74,3 +79,45 @@ les configurations d’établissement et les procédures de restauration.
 - https://render.com/docs/disks
 - https://render.com/docs/deploy-mysql
 - https://render.com/docs/compute-plans
+
+## Configuration proposée et coût du premier bloc
+
+| Service | Ressources | Coût mensuel USD |
+| --- | --- | ---: |
+| Passerelle | Starter, 512 Mo | 7 |
+| Interface | Starter, 512 Mo | 7 |
+| API OpenMRS | Pro, 4 Go | 85 |
+| MariaDB | Standard, 2 Go | 25 |
+| Disques | 15 Go base + 5 Go application, 0,25 USD/Go | 5 |
+| Total du premier bloc | Développement, une instance par service | 129 |
+
+Estimation au 9 octobre 2026, hors taxes, frais éventuels de workspace, trafic,
+minutes de build supplémentaires, destination des sauvegardes et autres modules.
+Source : https://render.com/pricing. Coût sur trois mois à configuration constante :
+387 USD. Ce montant couvre uniquement OpenMRS, et reste distinct du développement.
+Ne pas remplacer le budget de toute la pile par ce sous-total.
+
+## Appliquer le Blueprint
+
+1. Dans Render, sélectionner le workspace Carthaya Health.
+2. Ouvrir https://dashboard.render.com/blueprint/new?repo=https://github.com/izhar-eng/Cathaya
+3. Relier le dépôt et choisir la branche main si Render le demande.
+4. Vérifier les quatre services, Frankfurt et le coût annoncé.
+5. Renseigner OMRS_CONFIG_ADMIN_USER_PASSWORD avec un mot de passe unique fort,
+   conservé dans le gestionnaire de mots de passe ; ne pas l’envoyer dans le chat.
+6. Cliquer Apply. Les mots de passe de base sont générés et reliés automatiquement.
+7. Vérifier les builds et les démarrages avec les logs de chaque service.
+
+Le plugin ne crée pas directement les services privés avec leurs disques ;
+la première application de cette infrastructure passe par le Dashboard Blueprint.
+Les déploiements automatiques des Dockerfiles sont désactivés pour maîtriser
+les mises à jour de ce premier environnement ; les redéploiements sont manuels.
+
+Le health check /healthz prouve uniquement que la passerelle répond. Il ne prouve
+pas que la base ou OpenMRS est prêt. La connexion doit être testée sur /openmrs/spa/.
+Après démarrage sans démo, configurer les lieux, identifiants et rôles de Carthaya
+avant la création du premier patient. Aucun parcours clinique n’est encore validé.
+
+Docker et le CLI Render n’étant pas disponibles dans l’environnement de préparation,
+la validation locale couvre le schéma public, les références et la syntaxe shell.
+Les builds, le test nginx et la compatibilité en exécution seront vérifiés sur Render.

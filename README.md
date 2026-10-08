@@ -31,8 +31,9 @@ Une installation sans données de démonstration doit fonctionner.
 5. Vérifier les versions et compatibilités dans `config/components.json`.
 6. Écrire le déploiement après ces vérifications, puis installer le premier parcours.
 
-Aucun fichier Compose exécutable n'est fourni à ce stade : les images, variables,
-dépendances et licences seront vérifiées avant de figer la pile.
+Le fichier `render.yaml` prépare le premier bloc OpenMRS sur Render.
+Les images sont figées ; la construction et les parcours applicatifs restent à vérifier.
+Voir `docs/RENDER.md` pour le coût et les instructions d’application.
 
 ## Suivi
 

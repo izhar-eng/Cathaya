@@ -4,11 +4,13 @@
   "components": [
     {
       "name": "openmrs-o3",
-      "version": null,
-      "image": null,
-      "image_digest": null,
-      "database": null,
-      "compatibility_verified": false
+      "version": "3.7.1",
+      "image": "Carthaya wrapper based on openmrs/openmrs-reference-application-3-backend",
+      "image_digest": "sha256:929cfe5dca5f221460e0f4a57abb9294614df5f74fbb3bb865e01b8dfe7a985b",
+      "database": "MariaDB 10.11.19",
+      "compatibility_verified": false,
+      "platform_version": "2.8.8",
+      "artifact_inspection_verified": true
     },
     {
       "name": "openelis-global",

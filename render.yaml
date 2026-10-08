@@ -1,0 +1,106 @@
+# First OpenMRS block only. Review workspace, region and costs before Apply.
+previews:
+  generation: 'off'
+projects:
+- name: Carthaya Health
+  environments:
+  - name: development
+    services:
+    - type: pserv
+      name: carthaya-openmrs-db
+      runtime: image
+      region: frankfurt
+      plan: standard
+      image:
+        url: library/mariadb@sha256:7db29378d4fdab73f8123bbc2b48905c90d1a4b00cf848b028f1e81e623257f2
+      dockerCommand: mariadbd --character-set-server=utf8mb4 --collation-server=utf8mb4_general_ci
+      disk:
+        name: openmrs-db-data
+        mountPath: /var/lib/mysql
+        sizeGB: 15
+      envVars:
+      - key: MARIADB_DATABASE
+        value: openmrs
+      - key: MARIADB_USER
+        value: openmrs
+      - key: MARIADB_PASSWORD
+        generateValue: true
+      - key: MARIADB_ROOT_PASSWORD
+        generateValue: true
+    - type: pserv
+      name: carthaya-openmrs-backend
+      runtime: docker
+      region: frankfurt
+      plan: pro
+      dockerfilePath: ./infra/render/backend/Dockerfile
+      dockerContext: .
+      autoDeployTrigger: 'off'
+      disk:
+        name: openmrs-data
+        mountPath: /openmrs/data
+        sizeGB: 5
+      envVars:
+      - key: OMRS_CONFIG_CONNECTION_SERVER
+        fromService:
+          name: carthaya-openmrs-db
+          type: pserv
+          property: host
+      - key: OMRS_CONFIG_CONNECTION_PORT
+        value: '3306'
+      - key: OMRS_CONFIG_CONNECTION_DATABASE
+        value: openmrs
+      - key: OMRS_CONFIG_CONNECTION_USERNAME
+        value: openmrs
+      - key: OMRS_CONFIG_CONNECTION_PASSWORD
+        fromService:
+          name: carthaya-openmrs-db
+          type: pserv
+          envVarKey: MARIADB_PASSWORD
+      - key: OMRS_CONFIG_ADMIN_USER_PASSWORD
+        sync: false
+      - key: OMRS_CONFIG_CREATE_TABLES
+        value: 'true'
+      - key: OMRS_CONFIG_AUTO_UPDATE_DATABASE
+        value: 'true'
+      - key: OMRS_CONFIG_MODULE_WEB_ADMIN
+        value: 'false'
+      - key: OMRS_JAVA_MEMORY_OPTS
+        value: -Xms256m -Xmx2560m
+    - type: pserv
+      name: carthaya-openmrs-frontend
+      runtime: image
+      region: frankfurt
+      plan: starter
+      image:
+        url: openmrs/openmrs-reference-application-3-frontend@sha256:f6b1f8443ab27a6b1c3944c5a948f2e0cdfea3701dcfd59316677fef28a58f8d
+      envVars:
+      - key: SPA_PATH
+        value: /openmrs/spa
+      - key: API_URL
+        value: /openmrs
+      - key: SPA_CONFIG_URLS
+        value: ''
+      - key: SPA_DEFAULT_LOCALE
+        value: fr
+    - type: web
+      name: carthaya-openmrs
+      runtime: docker
+      region: frankfurt
+      plan: starter
+      dockerfilePath: ./infra/render/gateway/Dockerfile
+      dockerContext: .
+      autoDeployTrigger: 'off'
+      healthCheckPath: /healthz
+      envVars:
+      - key: PORT
+        value: '10000'
+      - key: OPENMRS_BACKEND_HOST
+        fromService:
+          name: carthaya-openmrs-backend
+          type: pserv
+          property: host
+      - key: OPENMRS_FRONTEND_HOST
+        fromService:
+          name: carthaya-openmrs-frontend
+          type: pserv
+          property: host

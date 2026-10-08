@@ -1,0 +1,24 @@
+{
+  "checked_at": "2026-10-09",
+  "upstream_distribution": "3.7.1",
+  "platform": "2.8.8",
+  "demo_content": "1.9.2",
+  "demo_module": "2.6.1",
+  "configuration_paths_removed": 131,
+  "configuration_paths_retained": 59,
+  "method": "Inspect OCI properties and configuration layer; build wrapper removes referenceapplication-demo directories and referencedemodata module",
+  "runtime_verified": false,
+  "local_checks": [
+    "official Render JSON schema",
+    "internal service references",
+    "POSIX shell syntax"
+  ],
+  "pending_checks": [
+    "Docker builds on Render",
+    "database initialization",
+    "administrator login",
+    "establishment configuration",
+    "patient create/read/restart",
+    "backup and restore"
+  ]
+}

@@ -42,3 +42,12 @@ Enterprise/modules payants. Provisions à confirmer, hors taxes.
 
 Les équipements, formation sur site, migration réelle, tiers payant, support humain
 et mise en service clinique font l'objet de lots séparés.
+
+## Sous-total Render du premier bloc OpenMRS
+
+Configuration détaillée dans docs/RENDER.md : estimation de 129 USD/mois, soit
+387 USD sur trois mois, hors taxes, frais de workspace et dépassements. Ce sous-total
+est une composante des moyens techniques ; il ne couvre pas OpenELIS, Odoo,
+Orthanc/OHIF, FHIR, les outils IA ou les sauvegardes externes. Il ne modifie pas
+le TJM de développement de 300 EUR HT et n’est pas additionné une seconde fois
+au budget technique global. Pas de conversion EUR non vérifiée dans cette note.
