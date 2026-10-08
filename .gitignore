@@ -1,0 +1,20 @@
+# Secrets et paramètres locaux
+.env
+.env.*
+!.env.example
+secrets/
+*.pem
+*.key
+# État métier et sauvegardes
+data/
+backups/
+*.sql
+*.dump
+*.dcm
+# Fichiers de travail
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+reports/local/
+.DS_Store

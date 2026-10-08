@@ -1,0 +1,62 @@
+{
+  "project": "carthaya-health",
+  "status": "pending_compatibility_validation",
+  "components": [
+    {
+      "name": "openmrs-o3",
+      "version": null,
+      "image": null,
+      "image_digest": null,
+      "database": null,
+      "compatibility_verified": false
+    },
+    {
+      "name": "openelis-global",
+      "version": null,
+      "image": null,
+      "image_digest": null,
+      "database": null,
+      "compatibility_verified": false
+    },
+    {
+      "name": "orthanc",
+      "version": null,
+      "image": null,
+      "image_digest": null,
+      "database": null,
+      "compatibility_verified": false
+    },
+    {
+      "name": "ohif",
+      "version": null,
+      "image": null,
+      "image_digest": null,
+      "database": null,
+      "compatibility_verified": false
+    },
+    {
+      "name": "odoo-community",
+      "version": null,
+      "image": null,
+      "image_digest": null,
+      "database": null,
+      "compatibility_verified": false
+    },
+    {
+      "name": "fhir-server",
+      "version": null,
+      "image": null,
+      "image_digest": null,
+      "database": null,
+      "compatibility_verified": false
+    },
+    {
+      "name": "integration-layer",
+      "version": null,
+      "image": null,
+      "image_digest": null,
+      "database": null,
+      "compatibility_verified": false
+    }
+  ]
+}

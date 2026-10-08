@@ -1,0 +1,11 @@
+id,jalon,tache,statut,critere,preuve
+T01,J1,Préparer structure et suivi,fait,Fichiers présents et lisibles,Archive de démarrage
+T02,J1,Publier le socle dans Cathaya,fait,Commit et fichiers accessibles sur main,https://github.com/izhar-eng/Cathaya/tree/main
+T03,J1,Choisir serveur et accès,à faire,Diagnostic serveur obtenu,
+T04,J1,Vérifier versions et compatibilités,à faire,Matrice documentée et images figées,
+T05,J1,Préparer installation reproductible,à faire,Reconstruction sur environnement vierge,
+T06,J1,Créer premier patient,à faire,Saisie et relecture après redémarrage,
+T07,J2,Relier parcours ambulatoire et Odoo,à faire,Prescription délivrance stock facture liés,
+T08,J3,Intégrer laboratoire et imagerie,à faire,Résultats reliés au dossier,
+T09,J4,Hospitalisation et FHIR,à faire,Séjour complet et récupération externe,
+T10,J5,Recette et restauration,à faire,Scénarios acceptés et restauration prouvée,
