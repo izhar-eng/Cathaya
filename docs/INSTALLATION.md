@@ -1,5 +1,11 @@
 # Préparation de l'installation
 
+## Hébergement retenu
+
+Render, workspace dédié Carthaya Health, accès vérifié le 9 octobre 2026.
+Voir docs/RENDER.md pour les services et leurs disques. Les informations Linux
+ci-dessous concernent une éventuelle installation autogérée, et non le PaaS Render.
+
 ## Informations à renseigner
 
 - Fournisseur, localisation et coût mensuel du serveur.
@@ -24,4 +30,5 @@ La sortie peut être redirigée dans un rapport local ignoré par Git.
 
 Les ressources de départ restent à mesurer sur la pile : environ 8 vCPU,
 32 Go RAM et 300 Go SSD pour développement. Recette séparée suivant les volumes.
-Aucun hébergement n'est encore commandé.
+Le workspace Render existe ; aucun service payant n’est encore créé.
+Le dimensionnement Linux ci-dessus ne constitue pas une configuration de services Render.

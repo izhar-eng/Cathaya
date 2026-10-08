@@ -11,7 +11,8 @@
 | 2026-10-08 | Dépôt fourni : izhar-eng/Cathaya | Initialisé, public |
 | 2026-10-08 | Accès en écriture de la connexion GitHub izhar-eng | Vérifié |
 | 2026-10-09 | Publication des documents et budgets sur le dépôt public | Autorisée explicitement |
-| 2026-10-08 | Hébergeur, localisation, serveur et domaines | À choisir |
+| 2026-10-09 | Hébergeur Render et workspace dédié Carthaya Health | Confirmé et accès vérifié |
+| 2026-10-09 | Région Render et domaines | À choisir avant provisionnement |
 | 2026-10-08 | Versions, images et moteurs de bases par composant | À vérifier |
 | 2026-10-08 | Édition et modules Odoo | À confirmer |
 

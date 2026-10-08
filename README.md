@@ -5,7 +5,7 @@ Distribution hospitalière réplicable, indépendante de FIT.
 ## État au 8 octobre 2026
 
 Le dépôt GitHub est initialisé. Cette livraison prépare la structure et le suivi.
-Les applications ne sont pas encore installées. Aucun serveur n'a été provisionné.
+Les applications ne sont pas encore installées. Un workspace Render dédié Carthaya Health est créé ; aucun service applicatif n’est encore provisionné.
 Le dépôt GitHub izhar-eng/Cathaya est public.
 La connexion izhar-eng dispose des droits d’écriture. Les versions restent à vérifier puis à figer.
 
@@ -26,8 +26,8 @@ Une installation sans données de démonstration doit fonctionner.
 
 1. Consulter `docs/STATUS.md`, `docs/TASKS.csv` et `docs/ROADMAP.md`.
 2. Suivre les fichiers et commits sur `https://github.com/izhar-eng/Cathaya`.
-3. Choisir le serveur, son accès et les domaines de développement/recette.
-4. Exécuter `python3 scripts/preflight.py` sur le serveur cible.
+3. Consulter `docs/RENDER.md` pour la préparation du déploiement dans le workspace dédié.
+4. Choisir la région Render et les ressources ; le diagnostic `scripts/preflight.py` concerne uniquement un serveur Linux autogéré.
 5. Vérifier les versions et compatibilités dans `config/components.json`.
 6. Écrire le déploiement après ces vérifications, puis installer le premier parcours.
 

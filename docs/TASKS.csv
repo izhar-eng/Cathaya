@@ -1,8 +1,8 @@
 id,jalon,tache,statut,critere,preuve
 T01,J1,Préparer structure et suivi,fait,Fichiers présents et lisibles,Archive de démarrage
 T02,J1,Publier le socle dans Cathaya,fait,Commit et fichiers accessibles sur main,https://github.com/izhar-eng/Cathaya/tree/main
-T03,J1,Choisir serveur et accès,à faire,Diagnostic serveur obtenu,
-T04,J1,Vérifier versions et compatibilités,à faire,Matrice documentée et images figées,
+T03,J1,Préparer hébergement Render dédié,en cours,Workspace dédié et configuration des services persistants,Workspace Carthaya Health accessible ; aucun service créé
+T04,J1,Vérifier versions et compatibilités,en cours,Matrice documentée et images figées,
 T05,J1,Préparer installation reproductible,à faire,Reconstruction sur environnement vierge,
 T06,J1,Créer premier patient,à faire,Saisie et relecture après redémarrage,
 T07,J2,Relier parcours ambulatoire et Odoo,à faire,Prescription délivrance stock facture liés,
