@@ -25,3 +25,6 @@ Décision du 9 octobre 2026 : démarrage exclusivement gratuit, instruction du p
 Le Blueprint Render payant est retiré du dépôt actif. Il reste dans l’historique Git.
 La configuration locale à volumes persistants est proposée pour tester réellement OpenMRS
 sans frais cloud. Le workspace dédié Render ne reçoit aucun service payant.
+
+Procédure macOS avec profil Colima séparé : voir docs/MACOS.md.
+La préparation de cette procédure ne valide pas son exécution.

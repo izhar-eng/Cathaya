@@ -34,3 +34,6 @@ Suivre docs/DEMARRAGE_GRATUIT.md sur la machine de développement.
 Après démarrage : vérifier logs et connexion, puis configurer l’établissement et tester un patient.
 La structure du dépôt public est disponible sur main.
 Aucun environnement applicatif validé pour le moment.
+
+Procédure macOS avec profil Colima séparé : voir docs/MACOS.md.
+La préparation de cette procédure ne valide pas son exécution.

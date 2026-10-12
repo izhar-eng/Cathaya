@@ -1,0 +1,12 @@
+# Inspected images are amd64. Apple Silicon requires emulation.
+services:
+  db:
+    platform: linux/amd64
+  backend:
+    platform: linux/amd64
+    environment:
+      OMRS_JAVA_MEMORY_OPTS: -Xms256m -Xmx2048m
+  frontend:
+    platform: linux/amd64
+  gateway:
+    platform: linux/amd64
