@@ -35,7 +35,10 @@ Depuis le dépôt :
 cp .env.example .env
 ```
 
-Renseigner trois mots de passe uniques forts dans .env, puis :
+Renseigner trois mots de passe uniques forts dans .env. Le mot de passe
+administrateur OpenMRS doit notamment contenir des majuscules et des minuscules ;
+utiliser aussi des chiffres et un caractère spécial. Une longue chaîne uniquement
+hexadécimale ne satisfait pas sa règle de casse. Puis :
 
 ```sh
 docker compose config --quiet

@@ -56,3 +56,41 @@ Une procédure préparée ne constitue pas une preuve de démarrage ou de persis
 
 Sources : https://github.com/abiosoft/colima/blob/v0.10.3/config/files.go,
 https://colima.run/docs/installation/ et https://colima.run/docs/commands/.
+
+## Dépannage du réseau et du relais
+
+Si la VM ne reçoit pas d'adresse avec le réseau utilisateur, Lima propose
+le réseau natif vzNAT. Dans le LIMA_HOME réservé à ce projet, l'override
+`_config/override.yaml` peut contenir :
+
+```yaml
+networks:
+  - vzNAT: true
+```
+
+Arrêter puis relancer uniquement la VM pour appliquer cette modification.
+Ce changement ne demande pas de redémarrer le Mac. Vérifier la connexion SSH
+et le service Docker dans la VM avant de construire les applications.
+
+Si le service Docker est actif dans la VM mais que son relais Unix échoue,
+un tunnel SSH distinct permet de tester la connexion. Dans un terminal :
+
+```sh
+ssh -F "$LIMA_HOME/colima-carthaya/ssh.config" -o ControlMaster=no -o ControlPath=none -o ExitOnForwardFailure=yes -N -L "$CARTHAYA_STORAGE/carthaya-engine.sock:/var/run/docker.sock" lima-colima-carthaya
+```
+
+Dans un autre terminal, avec les mêmes variables et le même DOCKER_CONFIG :
+
+```sh
+export DOCKER_HOST="unix://$CARTHAYA_STORAGE/carthaya-engine.sock"
+docker info
+cd "$CARTHAYA_REPO"
+docker compose -f compose.yaml -f compose.macos.yaml up -d --build
+```
+
+Utiliser DOCKER_HOST sans l'option --context dans ce cas, pour que Compose et
+BuildKit héritent du même moteur. Le tunnel doit rester ouvert pendant son
+utilisation. Il faut le recréer après un arrêt de la VM ; ce dépannage ne remplace
+pas la validation du cycle complet de démarrage et d'arrêt.
+
+Source réseau : https://lima-vm.io/docs/config/network/vmnet/.
