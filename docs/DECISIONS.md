@@ -34,7 +34,7 @@ La préparation de cette procédure ne valide pas son exécution.
 La remise en service part d'une sauvegarde logique antérieure à l'import CIEL,
 restaurée dans une cible séparée. Les sources de récupération sont conservées.
 La création de tables est désactivée pour démarrer OpenMRS sur le schéma restauré.
-L'import massif du dictionnaire attend la validation de l'accès et de la persistance.
+L’import du dictionnaire est autorisé après validation de l’accès et de la persistance.
 Ce résultat ne constitue pas une restauration intégrale des ajouts postérieurs
 à la sauvegarde.
 
@@ -45,3 +45,9 @@ nouveau patient et la recette clinique restent des étapes distinctes.
 La persistance du patient restauré et l’authentification après redémarrage des
 quatre services sont vérifiées. Les erreurs de configuration signalées au
 démarrage sont à traiter avant de valider un parcours clinique complet.
+
+Installation CIEL explicitement demandée le 14 octobre. Import par ZIP local
+en deux phases ordonnées pour respecter la limite d’envoi OpenMRS, sans
+réinitialiser les données. Sauvegarde avant import obligatoire. La phase
+relations est retenue si des erreurs subsistent dans la phase concepts.
+Un chargement partiel ne vaut pas installation validée.

@@ -30,7 +30,8 @@ Preuve : procédure exécutée, identifiant fictif et journal de résultat.
 
 ## Prochaine action
 
-Traiter les erreurs de chargement de configuration, configurer l’établissement
+Suivre l’import CIEL en cours ; vérifier sa fin et la recherche REST.
+Puis traiter les erreurs de chargement de configuration, configurer l’établissement
 et tester la saisie puis la relecture d’un nouveau patient fictif.
 La structure du dépôt public est disponible sur main.
 L’interface et l’authentification du socle restauré sont vérifiées ; la recette clinique complète reste à réaliser.
@@ -48,8 +49,7 @@ Les sources de récupération sont conservées ; les ajouts postérieurs à cett
 sauvegarde ne sont pas couverts par ce résultat.
 
 Les quatre conteneurs de la restauration ont démarré. OpenMRS utilise une
-configuration de reprise avec création de tables désactivée. L'import CIEL
-massif reste suspendu. L’interface répond en HTTP 200, la connexion administrateur
+configuration de reprise avec création de tables désactivée. L’import CIEL a été autorisé et lancé après la validation de la reprise. L’interface répond en HTTP 200, la connexion administrateur
 est authentifiée par l’API et le patient restauré est relu par l’API REST.
 Après redémarrage des quatre services, l’authentification et la relecture REST
 du même patient réussissent à nouveau. La base conserve 239 tables, 86 concepts
@@ -58,3 +58,22 @@ a nécessité environ quatre minutes ; aucune réinitialisation de base.
 
 Des erreurs de chargement de configuration (hiérarchie d’adresses et CSV)
 sont présentes dans les journaux : le parcours clinique complet reste à recetter.
+
+## Installation CIEL — 14 octobre 2026
+
+Sauvegarde logique supplémentaire réalisée et vérifiée avant l’import.
+CIEL v2026-09-24 est repris depuis l’archive dérivée clean-v2, avec
+normalisation des noms déjà documentée lors de la récupération. L’archive
+est vérifiée par CRC et empreinte ; les sources de récupération restent intactes.
+
+L’export contient 58 870 objets concept, soit 58 869 identifiants externes
+uniques (un identifiant apparaît deux fois). Aucun identifiant n’est remplacé.
+Le ZIP complet dépasse la limite OpenMRS de 75 000 000 octets, même après
+recompression. Il est réparti en concepts (28 135 052 octets), puis
+correspondances et relations (49 268 746 octets).
+
+Phase concepts acceptée par l’API locale : HTTP 201. Import en arrière-plan
+avec suivi persistant ; phase relations conditionnée à une fin sans erreur
+de la première phase. À ce stade, aucune installation complète n’est annoncée.
+La validation finale compare les identifiants attendus, vérifie les erreurs
+d’import, l’authentification, le patient restauré et la recherche REST.
