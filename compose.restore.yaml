@@ -1,0 +1,6 @@
+# Apply only after restoring a compatible OpenMRS schema into an isolated database.
+services:
+  backend:
+    environment:
+      OMRS_CONFIG_CREATE_TABLES: 'false'
+      OMRS_HAS_CURRENT_DATABASE: 'true'

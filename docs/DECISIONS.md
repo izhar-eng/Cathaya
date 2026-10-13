@@ -28,3 +28,12 @@ sans frais cloud. Le workspace dédié Render ne reçoit aucun service payant.
 
 Procédure macOS avec profil Colima séparé : voir docs/MACOS.md.
 La préparation de cette procédure ne valide pas son exécution.
+
+## Reprise du 14 octobre 2026
+
+La remise en service part d'une sauvegarde logique antérieure à l'import CIEL,
+restaurée dans une cible séparée. Les sources de récupération sont conservées.
+La création de tables est désactivée pour démarrer OpenMRS sur le schéma restauré.
+L'import massif du dictionnaire attend la validation de l'accès et de la persistance.
+Ce résultat ne constitue pas une restauration intégrale des ajouts postérieurs
+à la sauvegarde.

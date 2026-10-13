@@ -1,6 +1,6 @@
 # État du projet
 
-Date : 9 octobre 2026
+Date : 14 octobre 2026
 Jalon actif : J1, préparation du socle.
 
 ## Réalisé
@@ -37,3 +37,18 @@ Aucun environnement applicatif validé pour le moment.
 
 Procédure macOS avec profil Colima séparé : voir docs/MACOS.md.
 La préparation de cette procédure ne valide pas son exécution.
+
+## Reprise et restauration isolée
+
+Une sauvegarde SQL du 12 octobre, antérieure à l'import CIEL, a été vérifiée :
+intégrité gzip, marqueur de fin d'export et empreinte identique après copie.
+La restauration dans une cible neuve et vide a réussi sous MariaDB 10.11.19 :
+239 tables, 86 concepts et un patient du jeu de test sauvegardé.
+Les sources de récupération sont conservées ; les ajouts postérieurs à cette
+sauvegarde ne sont pas couverts par ce résultat.
+
+Les quatre conteneurs de la restauration ont démarré. OpenMRS utilise une
+configuration de reprise avec création de tables désactivée. L'import CIEL
+massif reste suspendu. La connexion administrateur, l'accès au dossier par API
+et la relecture après redémarrage restent à valider : la liaison de contrôle
+s'est interrompue pendant cette vérification.

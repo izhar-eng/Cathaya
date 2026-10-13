@@ -94,3 +94,20 @@ utilisation. Il faut le recréer après un arrêt de la VM ; ce dépannage ne re
 pas la validation du cycle complet de démarrage et d'arrêt.
 
 Source réseau : https://lima-vm.io/docs/config/network/vmnet/.
+
+## Reprise depuis une sauvegarde SQL
+
+Conserver la source de récupération et travailler dans un autre moteur et un
+autre projet Compose. Contrôler l'intégrité gzip, le marqueur de fin de dump et
+l'empreinte après copie. Vérifier la version MariaDB source et la compatibilité
+du schéma. Le chargement SQL doit viser une base vide, avec le backend arrêté.
+
+Après une restauration réussie, ajouter compose.restore.yaml aux fichiers
+Compose pour désactiver la création de tables. Vérifier les comptages SQL,
+l'authentification et la relecture d'un dossier avant et après redémarrage.
+Une sauvegarde antérieure à un import ne couvre pas les ajouts de cet import.
+Ne pas reprendre un import massif avant validation de l'environnement restauré.
+
+Pour Lima sur macOS, conserver un chemin réel court et un nom de profil court :
+les liens symboliques peuvent être résolus avant le contrôle de longueur des
+sockets SSH. Vérifier cette longueur avant de créer un gros disque virtuel.
