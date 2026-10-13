@@ -37,3 +37,11 @@ La création de tables est désactivée pour démarrer OpenMRS sur le schéma re
 L'import massif du dictionnaire attend la validation de l'accès et de la persistance.
 Ce résultat ne constitue pas une restauration intégrale des ajouts postérieurs
 à la sauvegarde.
+
+La connexion administrateur et la relecture du patient restauré par API ont été
+vérifiées. Cette preuve porte sur le dossier déjà sauvegardé ; la saisie d’un
+nouveau patient et la recette clinique restent des étapes distinctes.
+
+La persistance du patient restauré et l’authentification après redémarrage des
+quatre services sont vérifiées. Les erreurs de configuration signalées au
+démarrage sont à traiter avant de valider un parcours clinique complet.

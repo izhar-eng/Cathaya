@@ -1,10 +1,10 @@
 id,jalon,tache,statut,critere,preuve
 T01,J1,Préparer structure et suivi,fait,Fichiers présents et lisibles,Archive de démarrage
 T02,J1,Publier le socle dans Cathaya,fait,Commit et fichiers accessibles sur main,https://github.com/izhar-eng/Cathaya/tree/main
-T03,J1,Préparer environnement gratuit,en cours,Workspace dédié et configuration des services persistants,Restauration isolée préparée ; quatre conteneurs démarrés ; validation applicative en attente
+T03,J1,Préparer environnement gratuit,en cours,Workspace dédié et configuration des services persistants,Restauration isolée préparée ; quatre conteneurs démarrés ; interface et authentification API vérifiées après redémarrage
 T04,J1,Vérifier versions et compatibilités,en cours,Matrice documentée et images figées,Images figées ; propriétés OCI inspectées ; compatibilité en exécution à vérifier
-T05,J1,Préparer installation reproductible,en cours,Reconstruction sur environnement vierge,Sauvegarde SQL restaurée sur cible vide ; 239 tables ; connexion et redémarrage à valider
-T06,J1,Créer premier patient,à faire,Saisie et relecture après redémarrage,
+T05,J1,Préparer installation reproductible,en cours,Reconstruction sur environnement vierge,Sauvegarde SQL restaurée sur cible vide ; 239 tables ; authentification et relecture API vérifiées ; persistance après redémarrage vérifiée
+T06,J1,Créer premier patient,à faire,Saisie et relecture après redémarrage,Patient existant restauré et relu après redémarrage ; nouvelle saisie à tester
 T07,J2,Relier parcours ambulatoire et Odoo,à faire,Prescription délivrance stock facture liés,
 T08,J3,Intégrer laboratoire et imagerie,à faire,Résultats reliés au dossier,
 T09,J4,Hospitalisation et FHIR,à faire,Séjour complet et récupération externe,

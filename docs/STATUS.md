@@ -19,21 +19,21 @@ Jalon actif : J1, préparation du socle.
 
 ## À réaliser
 
-- Construction et démarrage de la pile locale sur une machine équipée de Docker Compose.
 - Vérification des versions et compatibilités.
 - Déploiement des applications, bases persistantes et comptes fictifs.
 
 ## Première preuve attendue
 
-Patient créé dans OpenMRS, relu après reconnexion et redémarrage.
+Patient restauré dans OpenMRS et relu après redémarrage : vérifié.
+La création d’un nouveau patient par l’interface reste à tester.
 Preuve : procédure exécutée, identifiant fictif et journal de résultat.
 
 ## Prochaine action
 
-Suivre docs/DEMARRAGE_GRATUIT.md sur la machine de développement.
-Après démarrage : vérifier logs et connexion, puis configurer l’établissement et tester un patient.
+Traiter les erreurs de chargement de configuration, configurer l’établissement
+et tester la saisie puis la relecture d’un nouveau patient fictif.
 La structure du dépôt public est disponible sur main.
-Aucun environnement applicatif validé pour le moment.
+L’interface et l’authentification du socle restauré sont vérifiées ; la recette clinique complète reste à réaliser.
 
 Procédure macOS avec profil Colima séparé : voir docs/MACOS.md.
 La préparation de cette procédure ne valide pas son exécution.
@@ -49,6 +49,12 @@ sauvegarde ne sont pas couverts par ce résultat.
 
 Les quatre conteneurs de la restauration ont démarré. OpenMRS utilise une
 configuration de reprise avec création de tables désactivée. L'import CIEL
-massif reste suspendu. La connexion administrateur, l'accès au dossier par API
-et la relecture après redémarrage restent à valider : la liaison de contrôle
-s'est interrompue pendant cette vérification.
+massif reste suspendu. L’interface répond en HTTP 200, la connexion administrateur
+est authentifiée par l’API et le patient restauré est relu par l’API REST.
+Après redémarrage des quatre services, l’authentification et la relecture REST
+du même patient réussissent à nouveau. La base conserve 239 tables, 86 concepts
+et un patient, sans patient dépourvu de personne associée. Le démarrage contrôlé
+a nécessité environ quatre minutes ; aucune réinitialisation de base.
+
+Des erreurs de chargement de configuration (hiérarchie d’adresses et CSV)
+sont présentes dans les journaux : le parcours clinique complet reste à recetter.
