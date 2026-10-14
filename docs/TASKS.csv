@@ -9,4 +9,4 @@ T07,J2,Relier parcours ambulatoire et Odoo,à faire,Prescription délivrance sto
 T08,J3,Intégrer laboratoire et imagerie,à faire,Résultats reliés au dossier,
 T09,J4,Hospitalisation et FHIR,à faire,Séjour complet et récupération externe,
 T10,J5,Recette et restauration,à faire,Scénarios acceptés et restauration prouvée,
-T11,J1,Installer CIEL,en cours,Concepts et relations importés sans erreur puis recherche REST vérifiée,Sauvegarde vérifiée ; CIEL v2026-09-24 ; phase concepts HTTP 201 ; suivi local persistant
+T11,J1,Installer CIEL,en cours,Concepts et relations importés sans erreur puis recherche REST vérifiée,Sauvegardes vérifiées ; neuf rejets corrigés et relus par REST ; tous les identifiants concepts présents ; relations en cours

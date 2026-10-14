@@ -72,3 +72,29 @@ réaliser séparément une fois le chargement terminé.
 - [Module OCL et règles de validation](https://github.com/openmrs/openmrs-module-openconceptlab)
 - [Documentation officielle : import depuis un fichier](https://openmrs.atlassian.net/wiki/spaces/docs/pages/25474980/Open%2BConcept%2BLab)
 - [Limite d'envoi de Platform 2.8.8](https://github.com/openmrs/openmrs-core/blob/2.8.8/web/src/main/resources/openmrs-servlet.xml)
+
+## Réparation des neuf concepts rejetés
+
+Le passage concepts a rencontré huit rejets de longueur et un nom français
+en conflit avec un autre concept. Le réimport ciblé a traité neuf éléments
+sans erreur. Douze noms dépassant 255 caractères sont conservés intégralement
+en descriptions dans leur langue d’origine, avec des UUID locaux déterministes.
+Ils ne sont plus utilisés comme noms de recherche ; les autres noms existants
+sont conservés. Cette adaptation concerne notamment un nom français de vaccin.
+Le nom français en conflit a été demandé comme synonyme non préféré ; OCL
+l’a enregistré comme `INDEX_TERM`, avec le même UUID de nom.
+
+Le script `ciel-repair-rejected.py` prépare un ZIP limité aux rejets et un
+journal de transformation. Les IDs de concept, les UUID et les URLs restent
+identiques. Il ne modifie ni le schéma SQL ni l’historique des imports.
+L’archive officielle et l’export dérivé initial sont conservés. La comparaison
+directe en base a confirmé les douze descriptions verbatim et le terme d’index
+non préféré ; les neuf concepts ont été relus par REST. Les noms transférés
+en description et le terme d’index sont des adaptations locales à conserver
+ou à réappliquer lors d’une future mise à jour OCL.
+
+Créer un dossier de reprise distinct après sauvegarde ; ne pas effacer le
+marqueur du premier lancement. Copier la liste complète des identifiants
+attendus dans le dossier de reprise. Le lanceur reçoit le ZIP des neuf concepts
+corrigés, puis le ZIP des correspondances/relations. Il vérifie le réimport
+avant de démarrer les relations.

@@ -51,3 +51,11 @@ en deux phases ordonnées pour respecter la limite d’envoi OpenMRS, sans
 réinitialiser les données. Sauvegarde avant import obligatoire. La phase
 relations est retenue si des erreurs subsistent dans la phase concepts.
 Un chargement partiel ne vaut pas installation validée.
+
+Correction des neuf rejets demandée explicitement le 14 octobre. Réimport
+ciblé par OCL après sauvegarde, sans modification du schéma ni troncature
+de termes médicaux : noms trop longs conservés en description, nom français
+conflictuel conservé comme terme d’index non préféré. Adaptations locales
+auditées ; codes et identités conceptuelles préservés. L’import historique
+reste enregistré comme échoué ; un import de réparation sans erreur fournit
+la preuve de résolution.

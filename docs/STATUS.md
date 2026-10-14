@@ -30,7 +30,7 @@ Preuve : procédure exécutée, identifiant fictif et journal de résultat.
 
 ## Prochaine action
 
-Suivre l’import CIEL en cours ; vérifier sa fin et la recherche REST.
+Suivre la phase correspondances/relations CIEL ; vérifier sa fin et la recherche REST.
 Puis traiter les erreurs de chargement de configuration, configurer l’établissement
 et tester la saisie puis la relecture d’un nouveau patient fictif.
 La structure du dépôt public est disponible sur main.
@@ -77,3 +77,25 @@ avec suivi persistant ; phase relations conditionnée à une fin sans erreur
 de la première phase. À ce stade, aucune installation complète n’est annoncée.
 La validation finale compare les identifiants attendus, vérifie les erreurs
 d’import, l’authentification, le patient restauré et la recherche REST.
+
+## Correction des rejets CIEL — 14 octobre 2026
+
+Le premier passage a traité 58 870 éléments : 58 789 ajouts, 72 mises à jour
+et 9 rejets. Il s’est terminé avant le lancement des relations.
+Une sauvegarde logique supplémentaire a été vérifiée avant correction.
+
+Réimport ciblé des neuf concepts : terminé sans erreur (8 ajouts et 1 mise
+à jour). Les 58 869 identifiants externes uniques attendus sont présents.
+Les neuf concepts corrigés sont relus par l’API REST.
+
+Douze libellés traduits dépassaient 255 caractères : texte complet conservé
+en descriptions, avec des UUID de description locaux déterministes. Les
+noms compatibles existants restent disponibles ; aucun libellé n’est tronqué.
+Le nom français en conflit avec un autre concept est conservé comme terme
+d’index non préféré par le module OCL. Codes et UUID des concepts inchangés.
+Le journal de transformation permet de retrouver les noms et leurs attributs
+d’origine. Le schéma OpenMRS et l’historique de l’import échoué sont conservés.
+
+La phase correspondances/relations a été acceptée en HTTP 201 et reste
+en cours. Le premier contrôle ne montre aucun élément en erreur.
+L’installation complète attend encore la fin et les contrôles de cette phase.
