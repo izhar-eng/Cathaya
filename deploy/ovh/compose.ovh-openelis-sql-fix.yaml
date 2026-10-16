@@ -1,0 +1,3 @@
+services:
+  oe.openelis.org:
+    image: carthaya-openelis:sql-fix-07
