@@ -59,3 +59,11 @@ conflictuel conservé comme terme d’index non préféré. Adaptations locales
 auditées ; codes et identités conceptuelles préservés. L’import historique
 reste enregistré comme échoué ; un import de réparation sans erreur fournit
 la preuve de résolution.
+
+## Reprise Render — 16 octobre 2026
+
+Workspace Carthaya Health confirmé par le propriétaire dans cette session.
+L’inventaire des services est vide. L’instruction de reprise n’est pas une
+levée de la restriction de gratuité : aucun provisionnement payant autorisé.
+La cible OpenMRS/MariaDB et ses données persistantes sont conservées ; aucune
+substitution PostgreSQL, base éphémère ou interface seule n’est déployée.

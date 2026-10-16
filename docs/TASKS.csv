@@ -10,3 +10,4 @@ T08,J3,Intégrer laboratoire et imagerie,à faire,Résultats reliés au dossier,
 T09,J4,Hospitalisation et FHIR,à faire,Séjour complet et récupération externe,
 T10,J5,Recette et restauration,à faire,Scénarios acceptés et restauration prouvée,
 T11,J1,Installer CIEL,en cours,Concepts et relations importés sans erreur puis recherche REST vérifiée,Sauvegardes vérifiées ; neuf rejets corrigés et relus par REST ; tous les identifiants concepts présents ; relations en cours
+T12,J1,Migrer le socle vers Render,bloqué,Patient et CIEL relus après redéploiement sur stockage persistant,Workspace confirmé vide le 16 octobre ; Free incompatible avec la persistance prévue ; décision de budget nécessaire

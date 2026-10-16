@@ -1,6 +1,6 @@
 # État du projet
 
-Date : 14 octobre 2026
+Date : 16 octobre 2026
 Jalon actif : J1, préparation du socle.
 
 ## Réalisé
@@ -99,3 +99,20 @@ d’origine. Le schéma OpenMRS et l’historique de l’import échoué sont co
 La phase correspondances/relations a été acceptée en HTTP 201 et reste
 en cours. Le premier contrôle ne montre aucun élément en erreur.
 L’installation complète attend encore la fin et les contrôles de cette phase.
+
+## Reprise de migration Render — 16 octobre 2026
+
+Le propriétaire a confirmé le workspace dédié Carthaya Health
+(tea-db427lijnfac73b92a20). La lecture de ses services ne renvoie aucun
+service. La restriction de gratuité est conservée ; aucun service ni base
+n’a été créé pendant cette reprise.
+
+Les limites officielles Render ont été revérifiées : pas de disque persistant
+sur Free, pas de service privé Free et PostgreSQL Free limité à 30 jours.
+La pile OpenMRS/MariaDB préparée ne peut pas être migrée intégralement avec
+persistance dans cette offre. La migration est bloquée avant provisionnement,
+par une décision de budget requise ; aucun transfert de données n’est lancé.
+
+Le plan de transfert et de retour arrière est décrit dans docs/MIGRATION_RENDER.md.
+Le suivi CIEL du 14 octobre ci-dessus est historique : sa fin doit être vérifiée
+sur le Mac avant de sélectionner la sauvegarde à transférer.
