@@ -1,0 +1,3 @@
+services:
+  frontend.openelis.org:
+    image: carthaya-openelis-frontend:login-fix-01
