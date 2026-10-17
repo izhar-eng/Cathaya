@@ -1,18 +1,20 @@
-# Orthanc PACS de demonstration - pas d'acces public direct.
-# Ce compose est independant de la pile OpenMRS/OpenELIS.
+# Carthaya demonstration PACS: standalone; do not use with patient-identifying studies.
+# Bound to loopback only. Protect any HTTPS reverse-proxy route with access controls.
 name: carthaya-pacs-demo
 services:
   orthanc:
-    image: orthancteam/orthanc:latest
+    image: orthancteam/orthanc:26.9.1
     restart: unless-stopped
     environment:
       DICOM_WEB_PLUGIN_ENABLED: "true"
       ORTHANC_EXPLORER_2_ENABLED: "true"
+      OHIF_PLUGIN_ENABLED: "true"
       ORTHANC__AUTHENTICATION_ENABLED: "false"
       ORTHANC__NAME: "Carthaya Demo PACS"
     ports:
       - "127.0.0.1:8042:8042"
     volumes:
       - orthanc-demo-storage:/var/lib/orthanc/db
+
 volumes:
   orthanc-demo-storage:
