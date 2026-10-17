@@ -1,0 +1,18 @@
+# Orthanc PACS de demonstration - pas d'acces public direct.
+# Ce compose est independant de la pile OpenMRS/OpenELIS.
+name: carthaya-pacs-demo
+services:
+  orthanc:
+    image: orthancteam/orthanc:latest
+    restart: unless-stopped
+    environment:
+      DICOM_WEB_PLUGIN_ENABLED: "true"
+      ORTHANC_EXPLORER_2_ENABLED: "true"
+      ORTHANC__AUTHENTICATION_ENABLED: "false"
+      ORTHANC__NAME: "Carthaya Demo PACS"
+    ports:
+      - "127.0.0.1:8042:8042"
+    volumes:
+      - orthanc-demo-storage:/var/lib/orthanc/db
+volumes:
+  orthanc-demo-storage:
